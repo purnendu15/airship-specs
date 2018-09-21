@@ -106,6 +106,11 @@ Implementation
   the corresponding site manifests.
   For e.g: calico-ip-rules.yaml.j2  with generate calico-ip-rules.yaml when
   processed by the site processor.
+  
+  4)High-Level Workflow
+  
+  
+  4-1) Generate Intermediary and Manifests from Site Design and Excel spec
 
 ::
 
@@ -117,11 +122,30 @@ Implementation
                            |     |       |      
   +---------------+        |     |       |
   | Site Config   +------> |     v       |
-  +---------------+        |  +---- +    |
-                           |  |Site |    +------> Site Manifests
-  +---------------+        |  |proc |    |
-  | Site Template +------> |  +-----+    |
+  +---------------+        |  +---------+|
+                           |  |Site     |+------> Site Manifests
+  +---------------+        |  |Processor||    
+  | Site Template +------> |  +---------+|
   +---------------+        +-------------+
+  
+  --
+  4-2) Generate Manifests from Intermediary
+
+::
+
+  User Input                   Tugboat                 Output                    
+  +---------------+        +---------------+
+  | Intermediary  +------> |  +----------+ |   
+  +---------------+        |  | Site     | + --------> Site Manifests
+                           |  | Processor| |   
+                           |  +----------+ | 
+  +---------------+        |               |
+  | Site Config   +------> |               |
+  +---------------+        |               | 
+                           |               |
+  +---------------+        |               |
+  | Site Template +------> |               |
+  +---------------+        +---------------+
   
 
 Usage
