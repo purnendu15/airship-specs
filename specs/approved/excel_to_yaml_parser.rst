@@ -107,19 +107,21 @@ Implementation
   For e.g: calico-ip-rules.yaml.j2  with generate calico-ip-rules.yaml when
   processed by the site processor.
 
-User Input                   Tugboat                 Output                    
-+---------------+        +-------------+
-| Site Design   +------> |  +------+   +------> Intermediary Yaml
-| Excel Spec    |        |  |Parser|   |
-+---------------+        |  +------+   |
-                         |     |       |      
-+---------------+        |     |       |
-| Site Config   +------> |     v       |
-+---------------+        |  +---- +    |
-                         |  |Site |    +------> Site Manifests
-+---------------+        |  |proc |    |
-| Site Template +------> |  +-----+    |
-+---------------+        +-------------+
+::
+
+  User Input                   Tugboat                 Output                    
+  +---------------+        +-------------+
+  | Site Design   +------> |  +------+   +------> Intermediary Yaml
+  | Excel Spec    |        |  |Parser|   |
+  +---------------+        |  +------+   |
+                           |     |       |      
+  +---------------+        |     |       |
+  | Site Config   +------> |     v       |
+  +---------------+        |  +---- +    |
+                           |  |Site |    +------> Site Manifests
+  +---------------+        |  |proc |    |
+  | Site Template +------> |  +-----+    |
+  +---------------+        +-------------+
   
 
 Usage
