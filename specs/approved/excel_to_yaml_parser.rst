@@ -100,13 +100,26 @@ Implementation
   2)Site Processor: The site processor consumes the intermediary yaml
   and generated site manifests based on corresponding jinja2 templates.
   
-  3)Templates: These define the specific the formats of the manifest files
+  3)Site Templates: These define the specific the formats of the manifest files
   for various entities like baremetal, network , host-profiles etc. The
   site processor applies these templates to intermediary yaml and generates
   the corresponding site manifests.
   For e.g: calico-ip-rules.yaml.j2  with generate calico-ip-rules.yaml when
   processed by the site processor.
 
+User Input                   Tugboat                 Output                    
++---------------+        +-------------+
+| Site Design   +------> |  +------+   +------> Intermediary Yaml
+| Excel Spec    |        |  |Parser|   |
++---------------+        |  +------+   |
+                         |     |       |      
++---------------+        |     |       |
+| Site Config   +------> |     v       |
++---------------+        |  +---- +    |
+                         |  |Site |    +------> Site Manifests
++---------------+        |  |proc |    |
+| Site Template +------> |  +-----+    |
++---------------+        +-------------+
   
 
 Usage
