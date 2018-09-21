@@ -97,15 +97,43 @@ Usage
 
   - Gather the following input files:
 
-1) Excel based site specification. This file contains detail specification
-covering IPMI, Public IPs, Private IPs, VLAN, Site Details etc.
+    1) Excel based site specification. This file contains detail specification
+    covering IPMI, Public IPs, Private IPs, VLAN, Site Details etc.
 
-2) Excel Specification to aid parsing of the above excel file. It contains
-details about specific rows and columns in various sheet which contain the
-necessary information to build site manifests.
+    2) Excel Specification to aid parsing of the above excel file. It contains
+    details about specific rows and columns in various sheet which contain the
+    necessary information to build site manifests.
 
-3) Site specific configuration file containing additional configuration like
-proxy, bgp information, interface names etc.
+    3) Site specific configuration file containing additional configuration like
+    proxy, bgp information, interface names etc.
+    
+    4) If an Intermediary yaml file exists. In this case we do not need Excel
+    and site specification
+ 
+* Program execution
+    1) CLI Options:
+      -g, --generate_intermediary  Dump intermediary file from passed excel and
+                                   excel spec. 
+      -m, --generate_manifests     Generate manifests from the generated
+                                   intermediary file
+      -x, --excel PATH             Path to engineering excel file, to be passed
+                                   with generate_intermediary. The -s option is
+                                   mandatory with this opton.
+      -s, --exel_spec PATH         Path to excel spec, to be passed with
+                                   generate_intermediary. The -x option is
+                                   mandatory alon with this option.
+      -i, --intermediary PATH      Path to intermediary file,to be passed
+                                   with generate_manifests. The -g and -x options
+                                   are not required with this option.
+      -d, --site_config PATH       Path to the site specific yaml file  [required]
+      -l, --loglevel INTEGER       Loglevel NOTSET:0 ,DEBUG:10,    INFO:20,
+                                   WARNING:30, ERROR:40, CRITICAL:50  [default:20]
+      --help                       Show this message and exit.
+     2) Example:
+     Generate Intermediary:tugboat -g -x <DesignSpec> -s <excel spec>
+     Generate Manifest & Intermediary:tugboat -mg -x <DesignSpec> -s <excel spec>
+     Generate Manifest with Intermediary:tugboat -m -i <intermediary>
+   
 
 
 Assignee(s)
