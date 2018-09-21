@@ -129,10 +129,14 @@ Usage
       -l, --loglevel INTEGER       Loglevel NOTSET:0 ,DEBUG:10,    INFO:20,
                                    WARNING:30, ERROR:40, CRITICAL:50  [default:20]
       --help                       Show this message and exit.
+      
      2) Example:
-     Generate Intermediary:tugboat -g -x <DesignSpec> -s <excel spec>
-     Generate Manifest & Intermediary:tugboat -mg -x <DesignSpec> -s <excel spec>
-     Generate Manifest with Intermediary:tugboat -m -i <intermediary>
+     
+      Generate Intermediary: tugboat -g -x <DesignSpec> -s <excel spec>
+     
+      Generate Manifest & Intermediary: tugboat -mg -x <DesignSpec> -s <excel spec>
+     
+      Generate Manifest with Intermediary: tugboat -m -i <intermediary>
    
 
 
@@ -144,7 +148,9 @@ Primary assignee:
 
 Other contributors:
   Hemanth Nakkina
+  
   PradeepKumar KS
+  
   Purnendu Ghosh
 
 Dependencies
