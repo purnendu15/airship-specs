@@ -89,21 +89,24 @@ Implementation
 * Functional Blocks
   The software consists of the following functional blocks:
   
-  - Excel Parser: It parses the excel file based on excel spec and
-  generated a yaml which is further processed using site specific
-  design rules to generate an intermediary yaml
+  1)Excel Parser: It parses the excel file based on excel spec and
+  generates a yaml which is further processed using site specific
+  config specs and global rules to generate an intermediary yaml
   
-  - Site Processor: The site processor consumes the intermediary yaml
+  The site specific confi rules are passed as argument to Tugboat
+  and the global design rules are constant defined by Tugboat
+  
+  
+  2)Site Processor: The site processor consumes the intermediary yaml
   and generated site manifests based on corresponding jinja2 templates.
   
-  - Templates: These define the specific the formats of the manifest files
+  3)Templates: These define the specific the formats of the manifest files
   for various entities like baremetal, network , host-profiles etc. The
   site processor applies these templates to intermediary yaml and generates
   the corresponding site manifests.
-  For e.g:
-  
-  SiteProcessor(intermediary.yaml) + calico-ip-rules.yaml.j2 =
-  calico-ip-rules.yaml
+  For e.g: calico-ip-rules.yaml.j2  with generate calico-ip-rules.yaml when
+  processed by the site processor.
+
   
 
 Usage
