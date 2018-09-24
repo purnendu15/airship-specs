@@ -194,21 +194,7 @@ Usage
       Generate Manifest & Intermediary: tugboat -mg -x <DesignSpec> -s <excel spec>
      
       Generate Manifest with Intermediary: tugboat -m -i <intermediary>
-   
-
-
-Assignee(s)
------------
-
-Primary assignee:
-  Gurpreet Singh
-
-Other contributors:
-  Hemanth Nakkina
   
-  PradeepKumar KS
-  
-  Purnendu Ghosh
 
 Dependencies
 ============
